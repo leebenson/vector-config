@@ -1,6 +1,6 @@
 [sources.gen1]
   type = "generator"
-  lines = ["Message from v2"]
+  lines = ["Message from v3"]
   format = "shuffle"
   batch_interval = 0.2
 
