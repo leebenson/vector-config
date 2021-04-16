@@ -1,0 +1,18 @@
+[sources.gen1]
+  type = "generator"
+  lines = ["Message from v1"]
+  format = "shuffle"
+  batch_interval = 0.2
+
+[transforms.remap]
+  type = "remap"
+  inputs = ["gen1"]
+  source = '''
+    .nested.count = 99
+    encode_json(.)
+  '''
+
+[sinks.blackhole]
+  type = "blackhole"
+  inputs = ["gen1"]
+  print_amount = 1000
